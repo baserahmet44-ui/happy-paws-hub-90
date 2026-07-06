@@ -352,27 +352,13 @@ function DesktopHero() {
       <div className="relative z-30 px-12 pt-8 pointer-events-none">
         <HeroHeading />
         <p
-          className="text-center text-gray-700 mt-5 animate-fade-up delay-700"
+          className="text-center mt-5 animate-fade-up delay-700"
           style={{ fontSize: "clamp(14px, 1vw, 18px)" }}
         >
-          Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
+          <span className="inline-block bg-brand-bg/85 backdrop-blur-[2px] rounded-full px-5 py-1.5 text-gray-700">
+            Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
+          </span>
         </p>
-        <div className="flex justify-center gap-3 mt-6 animate-fade-up delay-800 pointer-events-auto relative z-30">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-medium px-6 py-3 rounded-full transition-colors"
-          >
-            <MessageCircle className="w-4 h-4" /> WhatsApp'tan Yaz
-          </a>
-          <a
-            href={TEL_URL}
-            className="inline-flex items-center gap-2 border border-brand-green/30 text-brand-green hover:bg-white font-medium px-6 py-3 rounded-full transition-colors"
-          >
-            <Phone className="w-4 h-4" /> Ara: {PHONE_DISPLAY}
-          </a>
-        </div>
       </div>
 
       <div className="absolute z-20" style={{ top: 40, left: 48 }}>
@@ -461,25 +447,11 @@ function TabletHero() {
     <section className="hidden md:flex lg:hidden h-[calc(100vh-72px)] min-h-[600px] flex-col overflow-hidden relative">
       <div className="relative z-[5] px-8 pt-6">
         <HeroHeading />
-        <p className="text-center text-gray-700 mt-4 text-sm animate-fade-up delay-700">
-          Şanlıurfa'nın ilk pet oteli, kuaförü ve pet shop mağazası.
+        <p className="text-center mt-4 text-sm animate-fade-up delay-700">
+          <span className="inline-block bg-brand-bg/85 backdrop-blur-[2px] rounded-full px-4 py-1 text-gray-700">
+            Şanlıurfa'nın ilk pet oteli, kuaförü ve pet shop mağazası.
+          </span>
         </p>
-        <div className="flex justify-center gap-2 mt-4 animate-fade-up delay-800">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-2 bg-brand-orange text-white text-sm font-medium px-4 py-2 rounded-full"
-          >
-            <MessageCircle className="w-4 h-4" /> WhatsApp
-          </a>
-          <a
-            href={TEL_URL}
-            className="inline-flex items-center gap-2 border border-brand-green/30 text-brand-green text-sm font-medium px-4 py-2 rounded-full"
-          >
-            <Phone className="w-4 h-4" /> Ara
-          </a>
-        </div>
       </div>
 
       <div className="absolute z-20" style={{ top: 60, left: 12 }}>
@@ -531,25 +503,33 @@ function MobileHero() {
         <p className="text-gray-700 text-sm mt-3">
           Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
         </p>
-        <div id="hero-cta" className="mt-5 flex flex-col gap-2.5 max-w-sm mx-auto">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center justify-center gap-2 bg-brand-orange active:bg-brand-orange-hover text-white text-[15px] font-medium px-5 py-3 rounded-full"
-          >
-            <MessageCircle className="w-4 h-4" /> WhatsApp'tan Yaz
-          </a>
-          <a
-            href={TEL_URL}
-            className="inline-flex items-center justify-center gap-2 border border-brand-green/30 text-brand-green text-[15px] font-medium px-5 py-3 rounded-full"
-          >
-            <Phone className="w-4 h-4" /> Ara: {PHONE_DISPLAY}
-          </a>
+      </div>
+
+      <div className="mt-5 flex items-end animate-fade-up delay-400">
+        <img src={BOTTOM_L} alt="" className="flex-1 min-w-0 w-full h-auto block" />
+        <img src={BOTTOM_C} alt="" className="flex-[1.265] min-w-0 w-full h-auto block" />
+        <img src={BOTTOM_R} alt="" className="flex-1 min-w-0 w-full h-auto block" />
+      </div>
+
+      <div className="flex items-center justify-around px-4 mt-5 animate-fade-up delay-600">
+        <div className="flex items-center gap-2">
+          <AvatarStack />
+          <div>
+            <div className="font-serif-display text-brand-green text-lg leading-none">Sevgiyle</div>
+            <div className="text-gray-600 text-[10px]">Urfa'nın İlki</div>
+          </div>
+        </div>
+        <div className="w-px h-8 bg-gray-300" />
+        <div className="flex items-center gap-1">
+          <Star className="w-4 h-4 text-brand-orange fill-brand-orange" />
+          <div>
+            <div className="font-serif-display text-brand-green text-lg leading-none">5.0</div>
+            <div className="text-gray-600 text-[10px]">Google · 13</div>
+          </div>
         </div>
       </div>
 
-      <div className="flex gap-3 px-4 mt-6">
+      <div className="flex gap-3 px-4 mt-6 pb-2">
         <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
           <img src={PRODUCT} alt="Pet Kuaför" className="w-full h-full object-cover" />
           <div className="absolute top-2 left-2 inline-flex items-center gap-1 bg-white/90 px-2 py-0.5 rounded-full text-[10px] font-medium text-brand-green">
@@ -576,32 +556,6 @@ function MobileHero() {
         </div>
       </div>
 
-      <div className="flex items-center justify-around px-4 mt-5">
-        <div className="flex items-center gap-2">
-          <AvatarStack />
-          <div>
-            <div className="font-serif-display text-brand-green text-lg leading-none">Sevgiyle</div>
-            <div className="text-gray-600 text-[10px]">Urfa'nın İlki</div>
-          </div>
-        </div>
-        <div className="w-px h-8 bg-gray-300" />
-        <div className="flex items-center gap-1">
-          <Star className="w-4 h-4 text-brand-orange fill-brand-orange" />
-          <div>
-            <div className="font-serif-display text-brand-green text-lg leading-none">5.0</div>
-            <div className="text-gray-600 text-[10px]">Google · 13</div>
-          </div>
-        </div>
-      </div>
-
-      <h2 className="font-serif-display text-brand-green text-center text-2xl px-4 mt-8">
-        Dostunuz bizim de dostumuz
-      </h2>
-      <div className="mt-4 flex items-end">
-        <img src={BOTTOM_L} alt="" loading="lazy" className="flex-1 min-w-0 w-full h-auto block" />
-        <img src={BOTTOM_C} alt="" loading="lazy" className="flex-[1.265] min-w-0 w-full h-auto block" />
-        <img src={BOTTOM_R} alt="" loading="lazy" className="flex-1 min-w-0 w-full h-auto block" />
-      </div>
     </section>
   );
 }
@@ -1124,25 +1078,9 @@ function Footer() {
 /* ---------------- Floating CTAs (mobile) ---------------- */
 
 function FloatingCTAs() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const sentinel = document.getElementById("hero-cta");
-    if (!sentinel) {
-      setShow(true);
-      return;
-    }
-    const io = new IntersectionObserver(
-      ([entry]) => setShow(!entry.isIntersecting),
-      { rootMargin: "-56px 0px 0px 0px" },
-    );
-    io.observe(sentinel);
-    return () => io.disconnect();
-  }, []);
   return (
     <div
-      className={`md:hidden fixed inset-x-4 z-40 flex gap-2 transition-all duration-300 ${
-        show ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0 pointer-events-none"
-      }`}
+      className="md:hidden fixed inset-x-4 z-40 flex gap-2 animate-fade-up delay-800"
       style={{ bottom: "max(1rem, env(safe-area-inset-bottom))" }}
     >
       <a

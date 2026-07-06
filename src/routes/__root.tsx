@@ -76,12 +76,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Patron Barney Grooming — Everything Your Pets Love" },
-      { name: "description", content: "Pet hairdresser and store. Cozy homes, top-rated products, and grooming your pets will love." },
-      { name: "author", content: "Patron Barney" },
-      { property: "og:title", content: "Patron Barney Grooming" },
-      { property: "og:description", content: "Everything your pets love — grooming and store." },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { title: "Pet Kuaförü — Şanlıurfa'nın İlk Pet Oteli, Kuaförü ve Shop'u" },
+      { name: "description", content: "Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası. Evcil dostlarınıza sevgiyle bakıyoruz." },
+      { name: "author", content: "Pet Kuaförü" },
+      { property: "og:title", content: "Pet Kuaförü — Şanlıurfa" },
+      { property: "og:description", content: "Evcil dostlarınıza sevgiyle bakıyoruz. Pet kuaför, pet otel ve pet shop hizmetleri." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -101,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <head>
         <HeadContent />
       </head>

@@ -96,7 +96,7 @@ function IconBtn({
   href?: string;
   onClick?: () => void;
 }) {
-  const cn = `relative w-10 h-10 rounded-full flex items-center justify-center transition-colors ${className}`;
+  const cn = `relative w-11 h-11 rounded-full flex items-center justify-center transition-colors ${className}`;
   const content = (
     <>
       {children}
@@ -182,7 +182,7 @@ function Header() {
           <button
             aria-label="Menü"
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden w-10 h-10 rounded-full border border-brand-green/20 text-brand-green flex items-center justify-center"
+            className="md:hidden w-11 h-11 rounded-full border border-brand-green/20 text-brand-green flex items-center justify-center"
           >
             {open ? <XIcon className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -525,32 +525,32 @@ function MobileHero() {
   return (
     <section className="flex md:hidden flex-col overflow-hidden">
       <div className="px-4 pt-4 text-center animate-fade-up delay-200">
-        <h1 className="font-serif-display text-brand-green" style={{ fontSize: 34, lineHeight: 1.02 }}>
+        <h1 className="font-serif-display text-brand-green" style={{ fontSize: "clamp(30px, 9vw, 40px)", lineHeight: 1.05 }}>
           Evcil Dostlarınıza Sevgiyle Bakıyoruz
         </h1>
         <p className="text-gray-700 text-sm mt-3">
           Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
         </p>
-        <div className="mt-4 flex flex-col gap-2">
+        <div id="hero-cta" className="mt-5 flex flex-col gap-2.5 max-w-sm mx-auto">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center justify-center gap-2 bg-brand-orange text-white text-sm font-medium px-5 py-2.5 rounded-full"
+            className="inline-flex items-center justify-center gap-2 bg-brand-orange active:bg-brand-orange-hover text-white text-[15px] font-medium px-5 py-3 rounded-full"
           >
             <MessageCircle className="w-4 h-4" /> WhatsApp'tan Yaz
           </a>
           <a
             href={TEL_URL}
-            className="inline-flex items-center justify-center gap-2 border border-brand-green/30 text-brand-green text-sm font-medium px-5 py-2.5 rounded-full"
+            className="inline-flex items-center justify-center gap-2 border border-brand-green/30 text-brand-green text-[15px] font-medium px-5 py-3 rounded-full"
           >
             <Phone className="w-4 h-4" /> Ara: {PHONE_DISPLAY}
           </a>
         </div>
       </div>
 
-      <div className="flex gap-3 px-4 mt-4">
-        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-square bg-white">
+      <div className="flex gap-3 px-4 mt-6">
+        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
           <img src={PRODUCT} alt="Pet Kuaför" className="w-full h-full object-cover" />
           <div className="absolute top-2 left-2 inline-flex items-center gap-1 bg-white/90 px-2 py-0.5 rounded-full text-[10px] font-medium text-brand-green">
             <Scissors className="w-3 h-3" /> Kuaför
@@ -560,23 +560,23 @@ function MobileHero() {
             onClick={() =>
               document.getElementById("hizmetler")?.scrollIntoView({ behavior: "smooth" })
             }
-            className="absolute bottom-2 right-2 w-9 h-9 rounded-full bg-brand-green text-white flex items-center justify-center"
+            className="absolute bottom-2 right-2 w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center"
           >
             <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
-        <div className="flex-1 relative rounded-2xl overflow-hidden bg-white" style={{ aspectRatio: "3/4" }}>
+        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
           <img src={VIDEO} alt="Videolar" className="w-full h-full object-cover" />
           <button
             aria-label="Oynat"
-            className="absolute left-1/2 -translate-x-1/2 bottom-3 w-9 h-9 rounded-full bg-brand-green text-white flex items-center justify-center"
+            className="absolute left-1/2 -translate-x-1/2 bottom-3 w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center"
           >
             <Play className="w-4 h-4 fill-white" />
           </button>
         </div>
       </div>
 
-      <div className="flex items-center justify-around px-4 mt-4">
+      <div className="flex items-center justify-around px-4 mt-5">
         <div className="flex items-center gap-2">
           <AvatarStack />
           <div>
@@ -594,10 +594,13 @@ function MobileHero() {
         </div>
       </div>
 
-      <div className="mt-6 flex items-end" style={{ height: "42vw", maxHeight: 240 }}>
-        <img src={BOTTOM_L} alt="" className="flex-1 h-full w-full block object-cover object-bottom" />
-        <img src={BOTTOM_C} alt="" className="flex-[1.265] h-full w-full block object-cover object-bottom" />
-        <img src={BOTTOM_R} alt="" className="flex-1 h-full w-full block object-cover object-bottom" />
+      <h2 className="font-serif-display text-brand-green text-center text-2xl px-4 mt-8">
+        Dostunuz bizim de dostumuz
+      </h2>
+      <div className="mt-4 flex items-end">
+        <img src={BOTTOM_L} alt="" loading="lazy" className="flex-1 min-w-0 w-full h-auto block" />
+        <img src={BOTTOM_C} alt="" loading="lazy" className="flex-[1.265] min-w-0 w-full h-auto block" />
+        <img src={BOTTOM_R} alt="" loading="lazy" className="flex-1 min-w-0 w-full h-auto block" />
       </div>
     </section>
   );
@@ -928,19 +931,19 @@ function ContactForm() {
           required
           type="text"
           placeholder="İsim"
-          className="w-full rounded-xl border border-brand-green/15 px-4 py-3 text-sm outline-none focus:border-brand-green"
+          className="w-full rounded-xl border border-brand-green/15 px-4 py-3 text-base md:text-sm outline-none focus:border-brand-green"
         />
         <input
           required
           type="tel"
           placeholder="Telefon"
-          className="w-full rounded-xl border border-brand-green/15 px-4 py-3 text-sm outline-none focus:border-brand-green"
+          className="w-full rounded-xl border border-brand-green/15 px-4 py-3 text-base md:text-sm outline-none focus:border-brand-green"
         />
         <textarea
           required
           rows={4}
           placeholder="Mesajınız"
-          className="w-full rounded-xl border border-brand-green/15 px-4 py-3 text-sm outline-none focus:border-brand-green resize-none"
+          className="w-full rounded-xl border border-brand-green/15 px-4 py-3 text-base md:text-sm outline-none focus:border-brand-green resize-none"
         />
         <button
           type="submit"
@@ -1121,8 +1124,27 @@ function Footer() {
 /* ---------------- Floating CTAs (mobile) ---------------- */
 
 function FloatingCTAs() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const sentinel = document.getElementById("hero-cta");
+    if (!sentinel) {
+      setShow(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => setShow(!entry.isIntersecting),
+      { rootMargin: "-56px 0px 0px 0px" },
+    );
+    io.observe(sentinel);
+    return () => io.disconnect();
+  }, []);
   return (
-    <div className="md:hidden fixed bottom-4 inset-x-4 z-40 flex gap-2 animate-fade-up">
+    <div
+      className={`md:hidden fixed inset-x-4 z-40 flex gap-2 transition-all duration-300 ${
+        show ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0 pointer-events-none"
+      }`}
+      style={{ bottom: "max(1rem, env(safe-area-inset-bottom))" }}
+    >
       <a
         href={WHATSAPP_URL}
         target="_blank"
@@ -1145,7 +1167,7 @@ function FloatingCTAs() {
 
 function Index() {
   return (
-    <main className="bg-brand-bg pb-24 md:pb-0">
+    <main className="bg-brand-bg pb-24 md:pb-0 overflow-x-clip">
       <Header />
       <div id="anasayfa">
         <DesktopHero />

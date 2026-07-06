@@ -349,7 +349,7 @@ function AvatarStack() {
 function DesktopHero() {
   return (
     <section className="hidden lg:flex h-[calc(100vh-84px)] min-h-[640px] flex-col overflow-hidden relative">
-      <div className="relative z-[5] px-12 pt-8">
+      <div className="relative z-30 px-12 pt-8 pointer-events-none">
         <HeroHeading />
         <p
           className="text-center text-gray-700 mt-5 animate-fade-up delay-700"
@@ -357,7 +357,7 @@ function DesktopHero() {
         >
           Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
         </p>
-        <div className="flex justify-center gap-3 mt-6 animate-fade-up delay-800">
+        <div className="flex justify-center gap-3 mt-6 animate-fade-up delay-800 pointer-events-auto relative z-30">
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -594,10 +594,10 @@ function MobileHero() {
         </div>
       </div>
 
-      <div className="mt-6 flex items-end">
-        <img src={BOTTOM_L} alt="" className="flex-1 w-full h-auto block object-cover" />
-        <img src={BOTTOM_C} alt="" className="flex-[1.265] w-full h-auto block object-cover" />
-        <img src={BOTTOM_R} alt="" className="flex-1 w-full h-auto block object-cover" />
+      <div className="mt-6 flex items-end" style={{ height: "42vw", maxHeight: 240 }}>
+        <img src={BOTTOM_L} alt="" className="flex-1 h-full w-full block object-cover object-bottom" />
+        <img src={BOTTOM_C} alt="" className="flex-[1.265] h-full w-full block object-cover object-bottom" />
+        <img src={BOTTOM_R} alt="" className="flex-1 h-full w-full block object-cover object-bottom" />
       </div>
     </section>
   );
@@ -1145,7 +1145,7 @@ function FloatingCTAs() {
 
 function Index() {
   return (
-    <main className="bg-brand-bg">
+    <main className="bg-brand-bg pb-24 md:pb-0">
       <Header />
       <div id="anasayfa">
         <DesktopHero />

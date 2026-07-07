@@ -733,6 +733,15 @@ function Services() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-[1fr_auto] justify-center items-start">
+          <Reveal animation="animate-slide-in-left">
+            <ServiceHighlightCard />
+          </Reveal>
+          <Reveal delay={120} animation="animate-slide-in-right">
+            <VideoCard />
+          </Reveal>
+        </div>
       </div>
     </section>
   );

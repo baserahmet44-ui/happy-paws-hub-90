@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import {
   Search,
   Star,
-  ArrowUpRight,
-  Play,
   ArrowRight,
   Plus,
   Scissors,
@@ -53,10 +51,6 @@ export const Route = createFileRoute("/")({
 
 const AVATAR =
   "https://polo-pecan-73837341.figma.site/_assets/v11/e62173d41f91350a59628e8a9a55ae078a886fb9.png?w=128";
-const PRODUCT =
-  "https://polo-pecan-73837341.figma.site/_assets/v11/3e5158dad63d392ade022e81890edc9f54d750bc.png";
-const VIDEO =
-  "https://polo-pecan-73837341.figma.site/_assets/v11/76be6ec3a93a703b15e9cc01e764a4e3f9d7d2c0.png";
 const BOTTOM_L =
   "https://polo-pecan-73837341.figma.site/_assets/v11/8d44b25186ef45a5789c74668fb781cea4e1ff49.png";
 const BOTTOM_C =
@@ -254,81 +248,6 @@ function Header() {
   );
 }
 
-/* ---------------- Hero cards ---------------- */
-
-function ServiceHighlightCard() {
-  return (
-    <div
-      className="animate-slide-in-left delay-600"
-      style={{ width: "clamp(160px, 14vw, 260px)" }}
-    >
-      <div
-        className="relative rounded-2xl overflow-hidden bg-white"
-        style={{ aspectRatio: "260 / 257" }}
-      >
-        <img
-          src={PRODUCT}
-          alt="Pet Kuaför"
-          className="w-full h-full object-cover"
-        />
-        <button
-          aria-label="Hizmetleri gör"
-          onClick={() =>
-            document.getElementById("hizmetler")?.scrollIntoView({ behavior: "smooth" })
-          }
-          className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-brand-green text-white flex items-center justify-center hover:bg-brand-green-hover transition-colors"
-        >
-          <ArrowUpRight className="w-5 h-5" />
-        </button>
-        <div className="absolute top-3 left-3 inline-flex items-center gap-1 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-medium text-brand-green">
-          <Scissors className="w-3 h-3" /> Kuaför
-        </div>
-      </div>
-      <div className="mt-3">
-        <div
-          className="text-gray-700"
-          style={{ fontSize: "clamp(12px, 0.9vw, 14px)" }}
-        >
-          Pet Kuaför
-        </div>
-        <div
-          className="text-brand-green font-semibold"
-          style={{ fontSize: "clamp(13px, 1vw, 16px)" }}
-        >
-          Profesyonel Bakım
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function VideoCard() {
-  return (
-    <div
-      className="animate-slide-in-right delay-700"
-      style={{ width: "clamp(120px, 10vw, 177px)" }}
-    >
-      <div
-        className="relative rounded-2xl overflow-hidden bg-white"
-        style={{ aspectRatio: "177 / 287" }}
-      >
-        <img src={VIDEO} alt="Bakım videoları" className="w-full h-full object-cover" />
-        <button
-          aria-label="Videoyu oynat"
-          className="absolute left-1/2 -translate-x-1/2 bottom-4 w-10 h-10 rounded-full bg-brand-green text-white flex items-center justify-center hover:bg-brand-green-hover transition-colors"
-        >
-          <Play className="w-4 h-4 fill-white" />
-        </button>
-      </div>
-      <div
-        className="mt-3 text-gray-700 leading-tight"
-        style={{ fontSize: "clamp(11px, 0.8vw, 13px)" }}
-      >
-        Bakım anlarımızı sosyal medyada takip edin
-      </div>
-    </div>
-  );
-}
 
 function HeroHeading() {
   const words = ["Evcil", "Dostlarınıza", "Sevgiyle", "Bakıyoruz"];
@@ -733,14 +652,6 @@ function Services() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-[1fr_auto] justify-center items-start">
-          <Reveal animation="animate-slide-in-left">
-            <ServiceHighlightCard />
-          </Reveal>
-          <Reveal delay={120} animation="animate-slide-in-right">
-            <VideoCard />
-          </Reveal>
-        </div>
       </div>
     </section>
   );

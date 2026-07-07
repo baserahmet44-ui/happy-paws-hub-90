@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import {
   Search,
   Star,
-  ArrowUpRight,
-  Play,
   ArrowRight,
   Plus,
   Scissors,

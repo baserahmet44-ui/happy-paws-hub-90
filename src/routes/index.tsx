@@ -514,9 +514,9 @@ function MobileHero() {
         <h1 className="font-serif-display text-brand-green" style={{ fontSize: "clamp(30px, 9vw, 40px)", lineHeight: 1.05 }}>
           Evcil Dostlarınıza Sevgiyle Bakıyoruz
         </h1>
-        <p className="text-gray-700 text-sm mt-3">
-          Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
-        </p>
+        <div className="mt-4">
+          <HeroSubtitle sizeClass="text-base" />
+        </div>
       </div>
 
       <div className="mt-5 flex items-end animate-fade-up delay-400">
@@ -543,32 +543,17 @@ function MobileHero() {
         </div>
       </div>
 
-      <div className="flex gap-3 px-4 mt-6 pb-2">
-        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
-          <img src={PRODUCT} alt="Pet Kuaför" className="w-full h-full object-cover" />
-          <div className="absolute top-2 left-2 inline-flex items-center gap-1 bg-white/90 px-2 py-0.5 rounded-full text-[10px] font-medium text-brand-green">
-            <Scissors className="w-3 h-3" /> Kuaför
-          </div>
-          <button
-            aria-label="Hizmetler"
-            onClick={() =>
-              document.getElementById("hizmetler")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="absolute bottom-2 right-2 w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center"
-          >
-            <ArrowUpRight className="w-4 h-4" />
-          </button>
-        </div>
-        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
-          <img src={VIDEO} alt="Videolar" className="w-full h-full object-cover" />
-          <button
-            aria-label="Oynat"
-            className="absolute left-1/2 -translate-x-1/2 bottom-3 w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center"
-          >
-            <Play className="w-4 h-4 fill-white" />
-          </button>
-        </div>
+      <div className="flex justify-center px-4 mt-6 pb-4 animate-fade-up delay-700">
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-medium px-6 py-3 rounded-full transition-colors"
+        >
+          Randevu Al <ArrowRight className="w-4 h-4" />
+        </a>
       </div>
+
 
     </section>
   );

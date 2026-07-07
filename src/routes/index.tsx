@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   Search,
   Star,
@@ -70,6 +71,42 @@ const ADDRESS =
   "Veysel Karani Mahallesi, Abdullah Balak Caddesi No:3/A, Haliliye / Şanlıurfa";
 const MAP_QUERY = encodeURIComponent(ADDRESS);
 const MAP_EMBED = `https://www.google.com/maps?q=${MAP_QUERY}&output=embed`;
+
+// Hero subtitle — split into parts so the accent word can be swapped per client.
+const HERO_SUBTITLE = {
+  pre: "Şanlıurfa'nın ",
+  accent: "ilk ve tek",
+  post: " pet oteli, kuaförü ve pet shop mağazası.",
+};
+
+function HeroSubtitle({
+  className = "",
+  sizeClass = "text-xl md:text-2xl lg:text-3xl",
+}: {
+  className?: string;
+  sizeClass?: string;
+}) {
+  return (
+    <motion.p
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+      className={`${sizeClass} leading-snug text-center max-w-3xl mx-auto ${className}`}
+      style={{ color: "#14532d" }}
+    >
+      {HERO_SUBTITLE.pre}
+      <span
+        className="font-serif-display italic font-bold"
+        style={{ color: "#ea6a1e" }}
+      >
+        {HERO_SUBTITLE.accent}
+      </span>
+      {HERO_SUBTITLE.post}
+    </motion.p>
+  );
+}
+
+
 
 /* ---------------- Header ---------------- */
 
@@ -351,22 +388,11 @@ function DesktopHero() {
     <section className="hidden lg:flex h-[calc(100vh-84px)] min-h-[640px] flex-col overflow-hidden relative">
       <div className="relative z-30 px-12 pt-8 pointer-events-none">
         <HeroHeading />
-        <p
-          className="text-center mt-5 animate-fade-up delay-700"
-          style={{ fontSize: "clamp(14px, 1vw, 18px)" }}
-        >
-          <span className="inline-block bg-brand-bg/85 backdrop-blur-[2px] rounded-full px-5 py-1.5 text-gray-700">
-            Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
-          </span>
-        </p>
+        <div className="mt-6 px-4">
+          <HeroSubtitle sizeClass="text-2xl lg:text-3xl xl:text-4xl" />
+        </div>
       </div>
 
-      <div className="absolute z-20" style={{ top: 40, left: 48 }}>
-        <ServiceHighlightCard />
-      </div>
-      <div className="absolute z-20" style={{ top: 40, right: 48 }}>
-        <VideoCard />
-      </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end">
         <div className="flex-1 relative animate-photo-reveal delay-700">
@@ -447,23 +473,11 @@ function TabletHero() {
     <section className="hidden md:flex lg:hidden h-[calc(100vh-72px)] min-h-[600px] flex-col overflow-hidden relative">
       <div className="relative z-[5] px-8 pt-6">
         <HeroHeading />
-        <p className="text-center mt-4 text-sm animate-fade-up delay-700">
-          <span className="inline-block bg-brand-bg/85 backdrop-blur-[2px] rounded-full px-4 py-1 text-gray-700">
-            Şanlıurfa'nın ilk pet oteli, kuaförü ve pet shop mağazası.
-          </span>
-        </p>
+        <div className="mt-4 px-2">
+          <HeroSubtitle sizeClass="text-lg md:text-xl" />
+        </div>
       </div>
 
-      <div className="absolute z-20" style={{ top: 60, left: 12 }}>
-        <div style={{ width: 150 }}>
-          <ServiceHighlightCard />
-        </div>
-      </div>
-      <div className="absolute z-20" style={{ top: 60, right: 12 }}>
-        <div style={{ width: 110 }}>
-          <VideoCard />
-        </div>
-      </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end">
         <div className="flex-1 relative">
@@ -500,9 +514,9 @@ function MobileHero() {
         <h1 className="font-serif-display text-brand-green" style={{ fontSize: "clamp(30px, 9vw, 40px)", lineHeight: 1.05 }}>
           Evcil Dostlarınıza Sevgiyle Bakıyoruz
         </h1>
-        <p className="text-gray-700 text-sm mt-3">
-          Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
-        </p>
+        <div className="mt-4">
+          <HeroSubtitle sizeClass="text-base" />
+        </div>
       </div>
 
       <div className="mt-5 flex items-end animate-fade-up delay-400">
@@ -529,32 +543,17 @@ function MobileHero() {
         </div>
       </div>
 
-      <div className="flex gap-3 px-4 mt-6 pb-2">
-        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
-          <img src={PRODUCT} alt="Pet Kuaför" className="w-full h-full object-cover" />
-          <div className="absolute top-2 left-2 inline-flex items-center gap-1 bg-white/90 px-2 py-0.5 rounded-full text-[10px] font-medium text-brand-green">
-            <Scissors className="w-3 h-3" /> Kuaför
-          </div>
-          <button
-            aria-label="Hizmetler"
-            onClick={() =>
-              document.getElementById("hizmetler")?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="absolute bottom-2 right-2 w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center"
-          >
-            <ArrowUpRight className="w-4 h-4" />
-          </button>
-        </div>
-        <div className="flex-1 relative rounded-2xl overflow-hidden aspect-[4/5] bg-white">
-          <img src={VIDEO} alt="Videolar" className="w-full h-full object-cover" />
-          <button
-            aria-label="Oynat"
-            className="absolute left-1/2 -translate-x-1/2 bottom-3 w-11 h-11 rounded-full bg-brand-green text-white flex items-center justify-center"
-          >
-            <Play className="w-4 h-4 fill-white" />
-          </button>
-        </div>
+      <div className="flex justify-center px-4 mt-6 pb-4 animate-fade-up delay-700">
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener"
+          className="inline-flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-hover text-white font-medium px-6 py-3 rounded-full transition-colors"
+        >
+          Randevu Al <ArrowRight className="w-4 h-4" />
+        </a>
       </div>
+
 
     </section>
   );
@@ -733,6 +732,15 @@ function Services() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-[1fr_auto] justify-center items-start">
+          <Reveal animation="animate-slide-in-left">
+            <ServiceHighlightCard />
+          </Reveal>
+          <Reveal delay={120} animation="animate-slide-in-right">
+            <VideoCard />
+          </Reveal>
         </div>
       </div>
     </section>

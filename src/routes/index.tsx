@@ -388,22 +388,11 @@ function DesktopHero() {
     <section className="hidden lg:flex h-[calc(100vh-84px)] min-h-[640px] flex-col overflow-hidden relative">
       <div className="relative z-30 px-12 pt-8 pointer-events-none">
         <HeroHeading />
-        <p
-          className="text-center mt-5 animate-fade-up delay-700"
-          style={{ fontSize: "clamp(14px, 1vw, 18px)" }}
-        >
-          <span className="inline-block bg-brand-bg/85 backdrop-blur-[2px] rounded-full px-5 py-1.5 text-gray-700">
-            Şanlıurfa'nın ilk ve tek pet oteli, pet kuaförü ve pet shop mağazası.
-          </span>
-        </p>
+        <div className="mt-6 px-4">
+          <HeroSubtitle sizeClass="text-2xl lg:text-3xl xl:text-4xl" />
+        </div>
       </div>
 
-      <div className="absolute z-20" style={{ top: 40, left: 48 }}>
-        <ServiceHighlightCard />
-      </div>
-      <div className="absolute z-20" style={{ top: 40, right: 48 }}>
-        <VideoCard />
-      </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end">
         <div className="flex-1 relative animate-photo-reveal delay-700">

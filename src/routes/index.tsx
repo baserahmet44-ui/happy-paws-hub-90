@@ -420,7 +420,7 @@ function DesktopHero() {
             src={BOTTOM_C}
             alt=""
             className="w-full h-auto block"
-            style={{ maxHeight: "min(58vh, 48vw)", objectFit: "cover" }}
+            style={{ maxHeight: "min(48vh, 40vw)", objectFit: "cover" }}
           />
           <div
             className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-center animate-fade-up delay-1100 w-full px-6"

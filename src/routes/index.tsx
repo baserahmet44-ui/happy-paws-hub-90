@@ -72,6 +72,42 @@ const ADDRESS =
 const MAP_QUERY = encodeURIComponent(ADDRESS);
 const MAP_EMBED = `https://www.google.com/maps?q=${MAP_QUERY}&output=embed`;
 
+// Hero subtitle — split into parts so the accent word can be swapped per client.
+const HERO_SUBTITLE = {
+  pre: "Şanlıurfa'nın ",
+  accent: "ilk ve tek",
+  post: " pet oteli, kuaförü ve pet shop mağazası.",
+};
+
+function HeroSubtitle({
+  className = "",
+  sizeClass = "text-xl md:text-2xl lg:text-3xl",
+}: {
+  className?: string;
+  sizeClass?: string;
+}) {
+  return (
+    <motion.p
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.25, duration: 0.5, ease: "easeOut" }}
+      className={`${sizeClass} leading-snug text-center max-w-3xl mx-auto ${className}`}
+      style={{ color: "#14532d" }}
+    >
+      {HERO_SUBTITLE.pre}
+      <span
+        className="font-serif-display italic font-bold"
+        style={{ color: "#ea6a1e" }}
+      >
+        {HERO_SUBTITLE.accent}
+      </span>
+      {HERO_SUBTITLE.post}
+    </motion.p>
+  );
+}
+
+
+
 /* ---------------- Header ---------------- */
 
 const NAV_LINKS = [

@@ -473,23 +473,11 @@ function TabletHero() {
     <section className="hidden md:flex lg:hidden h-[calc(100vh-72px)] min-h-[600px] flex-col overflow-hidden relative">
       <div className="relative z-[5] px-8 pt-6">
         <HeroHeading />
-        <p className="text-center mt-4 text-sm animate-fade-up delay-700">
-          <span className="inline-block bg-brand-bg/85 backdrop-blur-[2px] rounded-full px-4 py-1 text-gray-700">
-            Şanlıurfa'nın ilk pet oteli, kuaförü ve pet shop mağazası.
-          </span>
-        </p>
+        <div className="mt-4 px-2">
+          <HeroSubtitle sizeClass="text-lg md:text-xl" />
+        </div>
       </div>
 
-      <div className="absolute z-20" style={{ top: 60, left: 12 }}>
-        <div style={{ width: 150 }}>
-          <ServiceHighlightCard />
-        </div>
-      </div>
-      <div className="absolute z-20" style={{ top: 60, right: 12 }}>
-        <div style={{ width: 110 }}>
-          <VideoCard />
-        </div>
-      </div>
 
       <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end">
         <div className="flex-1 relative">

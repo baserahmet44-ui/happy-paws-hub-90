@@ -386,15 +386,14 @@ function AvatarStack() {
 function DesktopHero() {
   return (
     <section className="hidden lg:flex h-[calc(100vh-84px)] min-h-[640px] flex-col overflow-hidden relative">
-      <div className="relative z-30 px-12 pt-8 pointer-events-none">
+      <div className="relative z-30 px-12 pt-10 pointer-events-none">
         <HeroHeading />
         <div className="mt-6 px-4">
           <HeroSubtitle sizeClass="text-2xl lg:text-3xl xl:text-4xl" />
         </div>
       </div>
 
-
-      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end translate-y-6">
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end">
         <div className="flex-1 relative animate-photo-reveal delay-700">
           <img
             src={BOTTOM_L}

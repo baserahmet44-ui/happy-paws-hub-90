@@ -399,7 +399,7 @@ function DesktopHero() {
             src={BOTTOM_L}
             alt=""
             className="w-full h-auto block"
-            style={{ maxHeight: "min(60vh, 50vw)", objectFit: "cover" }}
+            style={{ maxHeight: "min(50vh, 42vw)", objectFit: "cover" }}
           />
           <div
             className="absolute left-6 flex items-center gap-3 animate-fade-up delay-1000"
@@ -420,7 +420,7 @@ function DesktopHero() {
             src={BOTTOM_C}
             alt=""
             className="w-full h-auto block"
-            style={{ maxHeight: "min(75vh, 65vw)", objectFit: "cover" }}
+            style={{ maxHeight: "min(58vh, 48vw)", objectFit: "cover" }}
           />
           <div
             className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-center animate-fade-up delay-1100 w-full px-6"
@@ -445,7 +445,7 @@ function DesktopHero() {
             src={BOTTOM_R}
             alt=""
             className="w-full h-auto block"
-            style={{ maxHeight: "min(60vh, 50vw)", objectFit: "cover" }}
+            style={{ maxHeight: "min(50vh, 42vw)", objectFit: "cover" }}
           />
           <div
             className="absolute right-6 flex items-center gap-2 animate-fade-up delay-1200"

@@ -394,7 +394,7 @@ function DesktopHero() {
       </div>
 
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end">
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end translate-y-6">
         <div className="flex-1 relative animate-photo-reveal delay-700">
           <img
             src={BOTTOM_L}
